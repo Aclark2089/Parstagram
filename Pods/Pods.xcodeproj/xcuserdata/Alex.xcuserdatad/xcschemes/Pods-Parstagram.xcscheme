@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '9992A467AE7BE6A5B129CFA6'
+               BlueprintIdentifier = '42DA044B293D390B1E4916F8'
                BlueprintName = 'Pods-Parstagram'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_Parstagram.framework'>
