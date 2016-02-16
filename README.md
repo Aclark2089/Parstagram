@@ -1,4 +1,4 @@
-# Project 6 - *Name of App Here*
+# Project 6 - *Parstagram*
 
 **Parstagram** is a photo sharing app using Parse as its backend.
 
