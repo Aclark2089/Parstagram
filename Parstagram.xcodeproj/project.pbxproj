@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AA73C47E082631134D8E632E /* Pods_Parstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EC23D793F1065BB2E366E4 /* Pods_Parstagram.framework */; };
 		FA48EF7B1C73EDA7006E6FBF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48EF7A1C73EDA7006E6FBF /* LoginViewController.swift */; };
+		FAEFD5301C7A4E7800AD9206 /* UserPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFD52F1C7A4E7800AD9206 /* UserPost.swift */; };
+		FAEFD5321C7A4FF100AD9206 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFD5311C7A4FF100AD9206 /* HomeViewController.swift */; };
 		FAF548F31C73E85C0085456E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF548F21C73E85C0085456E /* AppDelegate.swift */; };
 		FAF548F81C73E85C0085456E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF548F61C73E85C0085456E /* Main.storyboard */; };
 		FAF548FB1C73E85C0085456E /* Parstagram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAF548F91C73E85C0085456E /* Parstagram.xcdatamodeld */; };
@@ -21,6 +23,8 @@
 		3C3629B447D01EB345F0D5F2 /* Pods-Parstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parstagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parstagram/Pods-Parstagram.release.xcconfig"; sourceTree = "<group>"; };
 		AB96F455F5E3835BA2C18F2F /* Pods-Parstagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parstagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Parstagram/Pods-Parstagram.debug.xcconfig"; sourceTree = "<group>"; };
 		FA48EF7A1C73EDA7006E6FBF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FAEFD52F1C7A4E7800AD9206 /* UserPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPost.swift; sourceTree = "<group>"; };
+		FAEFD5311C7A4FF100AD9206 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FAF548EF1C73E85C0085456E /* Parstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF548F21C73E85C0085456E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF548F71C73E85C0085456E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				FA48EF7A1C73EDA7006E6FBF /* LoginViewController.swift */,
+				FAEFD5311C7A4FF100AD9206 /* HomeViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -72,6 +77,14 @@
 			children = (
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		FAEFD5281C7A4D2F00AD9206 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				FAEFD52F1C7A4E7800AD9206 /* UserPost.swift */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 		FAF548E61C73E85C0085456E = {
@@ -95,6 +108,7 @@
 		FAF548F11C73E85C0085456E /* Parstagram */ = {
 			isa = PBXGroup;
 			children = (
+				FAEFD5281C7A4D2F00AD9206 /* Objects */,
 				FA48EF791C73ED8C006E6FBF /* Views */,
 				FA48EF781C73ED84006E6FBF /* ViewControllers */,
 				FAF548F21C73E85C0085456E /* AppDelegate.swift */,
@@ -229,8 +243,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAEFD5321C7A4FF100AD9206 /* HomeViewController.swift in Sources */,
 				FA48EF7B1C73EDA7006E6FBF /* LoginViewController.swift in Sources */,
 				FAF548F31C73E85C0085456E /* AppDelegate.swift in Sources */,
+				FAEFD5301C7A4E7800AD9206 /* UserPost.swift in Sources */,
 				FAF548FB1C73E85C0085456E /* Parstagram.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

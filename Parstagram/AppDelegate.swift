@@ -14,7 +14,7 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var storyboard = UIStoryboard(name: "Main", bundle: nil)
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -28,6 +28,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://mysterious-cliffs-31486.herokuapp.com/parse"
             })
         )
+        
+        
+        // Check in with the notifications and see if the logout was called
+       // NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: userDidLogoutNotification, object: nil)
+        
+        
+        // Handle current user persistance
+        if (PFUser.currentUser() != nil) {
+            
+            // Log Current User Found
+            NSLog("Current User " +  (PFUser.currentUser()?.username)! + " Detected as Logged In\n")
+            NSLog("Moving to Home View Controller\n")
+            
+            //Setup vc to move to home contoller
+            let vc = storyboard.instantiateViewControllerWithIdentifier("HomeNavigationController") as! UINavigationController
+            
+            
+            // Set window to vc
+            window?.rootViewController = vc
+            
+        }
+        
+        
         
         return true
     }

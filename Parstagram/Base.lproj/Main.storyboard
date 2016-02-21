@@ -8,7 +8,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -66,17 +66,17 @@
                     <connections>
                         <outlet property="passwordField" destination="PCE-Ex-fqX" id="Xz6-Ia-rEl"/>
                         <outlet property="usernameField" destination="Qun-7N-tdf" id="wqm-hM-pA4"/>
-                        <segue destination="BfQ-0l-TUd" kind="presentation" identifier="loginSegue" id="uKy-1D-P3d"/>
+                        <segue destination="mpi-ZT-FcC" kind="presentation" identifier="loginSegue" id="uKy-1D-P3d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="305" y="387"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="dNH-Kv-H4Z">
             <objects>
-                <viewController id="BfQ-0l-TUd" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="BfQ-0l-TUd" customClass="HomeViewController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c0r-dy-nUR"/>
                         <viewControllerLayoutGuide type="bottom" id="Qyl-NN-bo5"/>
@@ -86,9 +86,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="YBK-0g-TnU"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hR7-f4-Gmv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1371" y="387"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="T63-IP-zen">
+            <objects>
+                <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="mpi-ZT-FcC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dOf-hG-qSn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BfQ-0l-TUd" kind="relationship" relationship="rootViewController" id="2sR-3I-MGn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iOg-Qp-hBz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="839" y="387"/>
         </scene>
