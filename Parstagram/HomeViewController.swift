@@ -39,7 +39,7 @@ class HomeViewController: UIViewController {
         
             if let error = error {
                 // Log
-                NSLog("Error on logout:\n\(error)")
+                NSLog("Error on logout:\n\(error.localizedDescription)")
             }
             else {
                 

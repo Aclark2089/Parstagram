@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
             (user: PFUser?, error: NSError?) ->
             Void in
             
-            // We got user
+            // User logged in, we're out of here
             if (user != nil) {
                 
                 // Log Success, Move to Timeline Controller
@@ -42,14 +42,28 @@ class LoginViewController: UIViewController {
                 self.performSegueWithIdentifier("loginSegue", sender: nil)
                 
             }
-            // No user
+            // Error in logging user in
             else {
                 
-                // Log Failure
-                NSLog("\nLogin Unsuccessful\nError: \(error)")
+                // See if we can read the error code and then alert user to the issue if it is something we understand
+                if let error = error {
+                    
+                    if (error.code == 101) {
+                        
+                        // Username / Password combination not found or was incorrect
+                        let alert = UIAlertController(title: "Username / Password Incorrect", message: "", preferredStyle: .Alert)
+                        let OkAction = UIAlertAction(title: "OK", style: .Default) { (action) in }
+                        alert.addAction(OkAction)
+                        self.presentViewController(alert, animated: true) {}
+                        
+                    }
+                    
+                    // Log Failure
+                    NSLog("\nLogin Unsuccessful\nError: \(error.localizedDescription)")
+                    
+                }
                 
             }
-            
         
         }
     

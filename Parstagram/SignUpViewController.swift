@@ -15,7 +15,9 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var signUpLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     
+    @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
 
@@ -31,7 +33,6 @@ class SignUpViewController: UIViewController {
     }
     
     
-    
     // User Sign Up Feature
     @IBAction func onSignUp(sender: AnyObject) {
         
@@ -39,26 +40,67 @@ class SignUpViewController: UIViewController {
         let newUser = PFUser()
         
         // Set fields
+        newUser.email = emailField.text
         newUser.username = usernameField.text
         newUser.password = passwordField.text
-        
+
         // Signup user we created w/ username & password
         newUser.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             
             // If we succeed, perform segue
             if (success) {
-                
                 // Log user creation, Move to Timeline Controller
                 NSLog("\nCreated a user with Sign Up")
-                self.performSegueWithIdentifier("loginSegue", sender: nil)
+                self.performSegueWithIdentifier("SignUpToHomeSegue", sender: nil)
                 
             }
-                
-                // Couldn't sign up user
+            // Couldn't sign up user
             else {
-                
-                // Log creation failure
-                NSLog("\nUser Creation from Sign Up Failed\nError: \(error?.localizedDescription)")
+                // Setup error logging and alert display if error can be handled
+                if let error = error {
+                    // Check error code for what happened and display to user
+                    switch (error.code) {
+                    
+                    // Email Incorrect Format
+                    case 125:
+                        let alert = UIAlertController(title: "Email Address Invalid", message: "Format: example@example.com", preferredStyle: .Alert)
+                        let OkAction = UIAlertAction(title: "OK", style: .Default) { (action) in }
+                        alert.addAction(OkAction)
+                        self.presentViewController(alert, animated: true) {}
+                        break
+                        
+                    // Uesrname Already In Use
+                    case 202:
+                        
+                        let alert = UIAlertController(title: "Username Already Taken", message: "", preferredStyle: .Alert)
+                        let OkAction = UIAlertAction(title: "OK", style: .Default) { (action) in }
+                        alert.addAction(OkAction)
+                        self.presentViewController(alert, animated: true) {}
+                        break
+                     
+                    // Email Already In Use
+                    case 203:
+                        
+                        let alert = UIAlertController(title: "Email Already Taken", message: "", preferredStyle: .Alert)
+                        let OkAction = UIAlertAction(title: "OK", style: .Default) { (action) in }
+                        alert.addAction(OkAction)
+                        self.presentViewController(alert, animated: true) {}
+                        break
+                    
+                    // No Problems We Know Of
+                    default:
+                        
+                        let alert = UIAlertController(title: "Unknown Error", message: "Try Again", preferredStyle: .Alert)
+                        let OkAction = UIAlertAction(title: "OK", style: .Default) { (action) in }
+                        alert.addAction(OkAction)
+                        self.presentViewController(alert, animated: true) {}
+                        break
+                        
+                    }
+                    
+                    // Log creation failure
+                    NSLog("\nUser Creation from Sign Up Failed\nError: \(error.localizedDescription)")
+                }
                 
             }
             
