@@ -146,7 +146,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
-    // Number of sections in tableview == number of media objects we gathered
+    // Number of sections in tableview == number of media objects we gathered, else 0 cells we have to show
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if (media != nil) {
             return media!.count
@@ -154,6 +154,44 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         else {
             return 0
         }
+    }
+    
+    
+    // Setup header for each cell, which has the properties from the media object
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        // Main header
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        headerView.backgroundColor = UIColor(white: 1, alpha: 0.9)
+        
+//        // Profile view to be added to header
+//        let profileView = UIImageView(frame: CGRect(x: 10, y: 2, width: 25, height: 25))
+//        profileView.clipsToBounds = true
+//        profileView.layer.cornerRadius = 15;
+//        profileView.layer.borderColor = UIColor(white: 0.7, alpha: 0.8).CGColor
+//        profileView.layer.borderWidth = 1;
+//        
+//        // Use the section number to get the right URL
+//        let cellMedia = media![section]
+//        profileView.setImageWithURL(NSURL(string: cellMedia["user"]!["profile_picture"] as! String)!)
+//        
+//        // Username to be added to header
+//        let usernamelabel = UILabel(frame: CGRect(x: 60, y: 2, width: 200, height: 25))
+//        usernamelabel.clipsToBounds = true
+//        usernamelabel.text = picture["user"]!["username"] as? String
+//        
+//        // Add views to header
+//        headerView.addSubview(profileView)
+//        headerView.addSubview(usernamelabel)
+        
+        // Return cell header
+        return headerView
+        
+    }
+    
+    // Deselection animation for each table view cell
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated:true)
     }
     
     // Working with each media cell
