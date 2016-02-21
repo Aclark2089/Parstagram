@@ -54,38 +54,5 @@ class LoginViewController: UIViewController {
         }
     
     }
-    
-    // User Sign Up Feature
-    @IBAction func onSignUp(sender: AnyObject) {
-
-        // Create our new user to save
-        let newUser = PFUser()
-        
-        // Set fields
-        newUser.username = usernameField.text
-        newUser.password = passwordField.text
-        
-        // Signup user we created w/ username & password
-        newUser.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            
-            // If we succeed, perform segue
-            if (success) {
-                
-                // Log user creation, Move to Timeline Controller
-                NSLog("\nCreated a user with Sign Up")
-                self.performSegueWithIdentifier("loginSegue", sender: nil)
-                
-            }
-                
-            // Couldn't sign up user
-            else {
-                
-                // Log creation failure
-                NSLog("\nUser Creation from Sign Up Failed\nError: \(error?.localizedDescription)")
-            
-            }
-
-        }
-    }
 
 }
