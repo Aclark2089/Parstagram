@@ -140,11 +140,23 @@ class HomeViewController: UIViewController {
 
 // Tableview Extension for Delegate and Datasource of Tableview
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-
+    
+    // Total number of rows in each section
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 0
+        return 1
     }
     
+    // Number of sections in tableview == number of media objects we gathered
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if (media != nil) {
+            return media!.count
+        }
+        else {
+            return 0
+        }
+    }
+    
+    // Working with each media cell
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("MediaTableViewCell", forIndexPath: indexPath) as! MediaTableViewCell
         return cell

@@ -45,6 +45,7 @@ class UserMedia: NSObject {
         if let image = image {
             // Attempt to gather data from the image we have using UIImagePNGRepresentation(), and pass it back if we get it
             if let data = UIImagePNGRepresentation(image) {
+                // Success, return image representation data to store in 'media' for the media PFObject
                 return PFFile(name: "image.png", data: data)
             }
         }
