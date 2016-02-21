@@ -86,8 +86,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="YBK-0g-TnU"/>
+                    <navigationItem key="navigationItem" id="YBK-0g-TnU">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="u0G-lr-5BC">
+                            <connections>
+                                <action selector="onLogout:" destination="BfQ-0l-TUd" id="pMT-VP-DNC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="logoutButton" destination="u0G-lr-5BC" id="rWZ-7e-tlu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hR7-f4-Gmv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

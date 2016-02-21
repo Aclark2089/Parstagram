@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         // Check in with the notifications and see if the logout was called
-       // NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: userDidLogoutNotification, object: nil)
+       NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: userDidLogoutNotification, object: nil)
         
         
         // Handle current user persistance
@@ -50,9 +50,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         
-        
-        
         return true
+    }
+    
+    // Handle Logout Broadcast By Moving to The Login Screen
+    func userDidLogout() {
+        let vc = storyboard.instantiateInitialViewController()! as UIViewController
+        window?.rootViewController = vc
     }
 
     func applicationWillResignActive(application: UIApplication) {

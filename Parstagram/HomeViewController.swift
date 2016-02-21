@@ -7,9 +7,19 @@
 //
 
 import UIKit
+import Parse
+
+let userDidLogoutNotification = "User Logged Out\n"
 
 class HomeViewController: UIViewController {
 
+    // Outlets
+    @IBOutlet weak var logoutButton: UIBarButtonItem!
+    
+    
+    // Variables
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +30,32 @@ class HomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    @IBAction func onLogout(sender: AnyObject) {
+        PFUser.logOutInBackgroundWithBlock { (error: NSError?) ->
+        Void in
+        
+            if let error = error {
+                // Log
+                NSLog("Error on logout:\n\(error)")
+            }
+            else {
+                
+                // Log
+                NSLog("Logout Success")
+                //Broadcast
+                NSNotificationCenter.defaultCenter().postNotificationName(userDidLogoutNotification, object: nil)
+                
+            }
+        
+        }
+        
+    }
+    
+    
+    
     
 
     /*
