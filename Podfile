@@ -5,5 +5,7 @@ use_frameworks!
 
 target 'Parstagram' do
     pod 'Parse'
+    pod 'AFNetworking'
+    pod 'BDBOAuth1Manager'
 end
 
