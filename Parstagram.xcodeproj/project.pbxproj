@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		AA73C47E082631134D8E632E /* Pods_Parstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EC23D793F1065BB2E366E4 /* Pods_Parstagram.framework */; };
 		FA48EF7B1C73EDA7006E6FBF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48EF7A1C73EDA7006E6FBF /* LoginViewController.swift */; };
-		FAEFD5301C7A4E7800AD9206 /* UserPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFD52F1C7A4E7800AD9206 /* UserPost.swift */; };
 		FAEFD5321C7A4FF100AD9206 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFD5311C7A4FF100AD9206 /* HomeViewController.swift */; };
 		FAEFD5341C7A574200AD9206 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFD5331C7A574200AD9206 /* SignUpViewController.swift */; };
 		FAEFD5381C7A686600AD9206 /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFD5371C7A686600AD9206 /* MediaTableViewCell.swift */; };
+		FAEFD53A1C7A6F9500AD9206 /* UserMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFD5391C7A6F9500AD9206 /* UserMedia.swift */; };
 		FAF548F31C73E85C0085456E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF548F21C73E85C0085456E /* AppDelegate.swift */; };
 		FAF548F81C73E85C0085456E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF548F61C73E85C0085456E /* Main.storyboard */; };
 		FAF548FB1C73E85C0085456E /* Parstagram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAF548F91C73E85C0085456E /* Parstagram.xcdatamodeld */; };
@@ -25,10 +25,10 @@
 		3C3629B447D01EB345F0D5F2 /* Pods-Parstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parstagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parstagram/Pods-Parstagram.release.xcconfig"; sourceTree = "<group>"; };
 		AB96F455F5E3835BA2C18F2F /* Pods-Parstagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parstagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Parstagram/Pods-Parstagram.debug.xcconfig"; sourceTree = "<group>"; };
 		FA48EF7A1C73EDA7006E6FBF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		FAEFD52F1C7A4E7800AD9206 /* UserPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPost.swift; sourceTree = "<group>"; };
 		FAEFD5311C7A4FF100AD9206 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FAEFD5331C7A574200AD9206 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FAEFD5371C7A686600AD9206 /* MediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
+		FAEFD5391C7A6F9500AD9206 /* UserMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMedia.swift; sourceTree = "<group>"; };
 		FAF548EF1C73E85C0085456E /* Parstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF548F21C73E85C0085456E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF548F71C73E85C0085456E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 		FAEFD5281C7A4D2F00AD9206 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				FAEFD52F1C7A4E7800AD9206 /* UserPost.swift */,
+				FAEFD5391C7A6F9500AD9206 /* UserMedia.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -253,9 +253,9 @@
 				FAEFD5321C7A4FF100AD9206 /* HomeViewController.swift in Sources */,
 				FA48EF7B1C73EDA7006E6FBF /* LoginViewController.swift in Sources */,
 				FAF548F31C73E85C0085456E /* AppDelegate.swift in Sources */,
-				FAEFD5301C7A4E7800AD9206 /* UserPost.swift in Sources */,
 				FAEFD5381C7A686600AD9206 /* MediaTableViewCell.swift in Sources */,
 				FAF548FB1C73E85C0085456E /* Parstagram.xcdatamodeld in Sources */,
+				FAEFD53A1C7A6F9500AD9206 /* UserMedia.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import AFNetworking
+import SVProgressHUD
 
 let userDidLogoutNotification = "User Logged Out\n"
 
@@ -40,6 +41,44 @@ class HomeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func callServerForUserMedia() {
+        
+        // Setup a PFQuery object to handle collection of the user's images
+        let query = PFQuery(className: "UserMedia")
+        
+        // Order the media gathered by creation date, include author and set limit # of media returned
+        query.orderByAscending("createdAt")
+        query.includeKey("author")
+        query.limit = 20
+        
+        SVProgressHUD.show()
+        
+        query.findObjectsInBackgroundWithBlock { (media: [PFObject]?, error: NSError?) ->
+        Void in
+            // If we are able to get new userMedia, then set out new media as the new userMedia object
+            if let media = media {
+                
+                // Reset user media object for the tableview data, reload table to display it
+                self.media = media
+                self.tableView.reloadData()
+                
+                // Dismiss the progress bar for loading the media
+                SVProgressHUD.dismiss()
+                
+            }
+            // Unable to get new user media
+            else {
+                if let error = error {
+                    // Log error
+                    NSLog("Error: Unable to query new user media objects\n\(error)")
+                }
+                
+            }
+        }
+        
+    
     }
     
     
@@ -81,8 +120,8 @@ class HomeViewController: UIViewController {
             self.refreshController.endRefreshing()
         })
         
-        // Query Media from Parse Server
-        //callParseServerForImages()
+        // Query Media from Server
+        callServerForUserMedia()
         
         self.refreshController?.endRefreshing()
     }
