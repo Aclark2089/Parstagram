@@ -12,6 +12,7 @@
 		FAEFD5301C7A4E7800AD9206 /* UserPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFD52F1C7A4E7800AD9206 /* UserPost.swift */; };
 		FAEFD5321C7A4FF100AD9206 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFD5311C7A4FF100AD9206 /* HomeViewController.swift */; };
 		FAEFD5341C7A574200AD9206 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFD5331C7A574200AD9206 /* SignUpViewController.swift */; };
+		FAEFD5381C7A686600AD9206 /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFD5371C7A686600AD9206 /* MediaTableViewCell.swift */; };
 		FAF548F31C73E85C0085456E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF548F21C73E85C0085456E /* AppDelegate.swift */; };
 		FAF548F81C73E85C0085456E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF548F61C73E85C0085456E /* Main.storyboard */; };
 		FAF548FB1C73E85C0085456E /* Parstagram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAF548F91C73E85C0085456E /* Parstagram.xcdatamodeld */; };
@@ -27,6 +28,7 @@
 		FAEFD52F1C7A4E7800AD9206 /* UserPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPost.swift; sourceTree = "<group>"; };
 		FAEFD5311C7A4FF100AD9206 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FAEFD5331C7A574200AD9206 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		FAEFD5371C7A686600AD9206 /* MediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
 		FAF548EF1C73E85C0085456E /* Parstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF548F21C73E85C0085456E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF548F71C73E85C0085456E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		FA48EF791C73ED8C006E6FBF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FAEFD5371C7A686600AD9206 /* MediaTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				FA48EF7B1C73EDA7006E6FBF /* LoginViewController.swift in Sources */,
 				FAF548F31C73E85C0085456E /* AppDelegate.swift in Sources */,
 				FAEFD5301C7A4E7800AD9206 /* UserPost.swift in Sources */,
+				FAEFD5381C7A686600AD9206 /* MediaTableViewCell.swift in Sources */,
 				FAF548FB1C73E85C0085456E /* Parstagram.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

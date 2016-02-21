@@ -157,7 +157,7 @@
             </objects>
             <point key="canvasLocation" x="305" y="387"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Parstagram-->
         <scene sceneID="dNH-Kv-H4Z">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="BfQ-0l-TUd" customClass="HomeViewController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
@@ -168,9 +168,25 @@
                     <view key="view" contentMode="scaleToFill" id="JC9-ie-6zA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e66-KG-Vyg">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Media" id="llY-BR-Qs1" customClass="MediaTableViewCell" customModule="Parstagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="llY-BR-Qs1" id="ddc-ak-Y64">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="YBK-0g-TnU">
+                    <navigationItem key="navigationItem" title="Parstagram" id="YBK-0g-TnU">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="u0G-lr-5BC">
                             <connections>
                                 <action selector="onLogout:" destination="BfQ-0l-TUd" id="pMT-VP-DNC"/>
@@ -180,6 +196,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="logoutButton" destination="u0G-lr-5BC" id="rWZ-7e-tlu"/>
+                        <outlet property="tableView" destination="e66-KG-Vyg" id="nIZ-Rw-e7V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hR7-f4-Gmv" userLabel="First Responder" sceneMemberID="firstResponder"/>

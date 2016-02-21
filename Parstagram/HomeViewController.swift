@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import AFNetworking
 
 let userDidLogoutNotification = "User Logged Out\n"
 
@@ -15,15 +16,25 @@ class HomeViewController: UIViewController {
 
     // Outlets
     @IBOutlet weak var logoutButton: UIBarButtonItem!
-    
+    @IBOutlet weak var tableView: UITableView!
     
     // Variables
+    var refreshController: UIRefreshControl!
+    var media: [PFObject]?
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Setup tableview
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        // Setup refresh controller for table reload
+        refreshController = UIRefreshControl()
+        refreshController.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.insertSubview(refreshController, atIndex: 0)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,9 +65,27 @@ class HomeViewController: UIViewController {
         
     }
     
+    // Delay duration for onRefresh function
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    }
     
-    
-    
+    // Handle refreshController action
+    func onRefresh() {
+        delay(2, closure: {
+            self.refreshController.endRefreshing()
+        })
+        
+        // Query Media from Parse Server
+        //callParseServerForImages()
+        
+        self.refreshController?.endRefreshing()
+    }
 
     /*
     // MARK: - Navigation
@@ -67,5 +96,19 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+}
+
+// Tableview Extension for Delegate and Datasource of Tableview
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return 0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCellWithIdentifier("MediaTableViewCell", forIndexPath: indexPath) as! MediaTableViewCell
+        return cell
+    }
 
 }
