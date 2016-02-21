@@ -85,13 +85,13 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Parstagram/AFNetworking.framework"
-  install_framework "Pods-Parstagram/BDBOAuth1Manager.framework"
   install_framework "Pods-Parstagram/Bolts.framework"
   install_framework "Pods-Parstagram/Parse.framework"
+  install_framework "Pods-Parstagram/SVProgressHUD.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Parstagram/AFNetworking.framework"
-  install_framework "Pods-Parstagram/BDBOAuth1Manager.framework"
   install_framework "Pods-Parstagram/Bolts.framework"
   install_framework "Pods-Parstagram/Parse.framework"
+  install_framework "Pods-Parstagram/SVProgressHUD.framework"
 fi
