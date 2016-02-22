@@ -202,6 +202,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <toolbarItems>
+                        <barButtonItem title="Home" id="WH5-Kq-EwL"/>
+                        <barButtonItem width="65" style="plain" systemItem="fixedSpace" id="1gB-vb-Jgp"/>
+                        <barButtonItem title="Capture" id="Dfd-6N-Ub1"/>
+                        <barButtonItem width="65" style="plain" systemItem="fixedSpace" id="CJn-Bl-UtR"/>
+                        <barButtonItem title="Profile" id="fo5-zj-ezG"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Parstagram" id="YBK-0g-TnU">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="u0G-lr-5BC">
                             <connections>
@@ -222,13 +229,17 @@
         <!--Navigation Controller-->
         <scene sceneID="T63-IP-zen">
             <objects>
-                <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="mpi-ZT-FcC" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="mpi-ZT-FcC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dOf-hG-qSn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="qnJ-o0-MNX">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BfQ-0l-TUd" kind="relationship" relationship="rootViewController" id="2sR-3I-MGn"/>
                     </connections>
