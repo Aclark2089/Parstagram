@@ -176,6 +176,23 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         // Setup our basic profile
         profileView.image = UIImage(named: "assets-userprofileimage")
+        
+        // Username to be added to header
+        let timeLabel = UILabel(frame: CGRect(x: 250, y: 3, width: 90, height: 20))
+        timeLabel.clipsToBounds = true
+        
+        // Check if we can get a time
+        if (media?[section].createdAt != nil) {
+            
+            // Empty string, format the the time we got and submit it to the time label
+            var createdAt = ""
+            let formatter = NSDateFormatter()
+            formatter.dateStyle = .ShortStyle
+            
+            // Set date
+            createdAt = formatter.stringFromDate(media![section].createdAt!)
+            timeLabel.text = createdAt
+        }
 
         
         // Username to be added to header
@@ -187,9 +204,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             usernamelabel.text = media![section]["author"].username
         }
         
+        
         // Add views to header
         headerView.addSubview(profileView)
         headerView.addSubview(usernamelabel)
+        headerView.addSubview(timeLabel)
         
         // Return cell header
         return headerView
