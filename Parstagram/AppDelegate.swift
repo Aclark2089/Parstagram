@@ -33,6 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Check in with the notifications and see if the logout was called
        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: userDidLogoutNotification, object: nil)
         
+        // Check in with the notifications on user uploading an image to return back home
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidUploadImage", name: userUploadedPhotoNotification, object: nil)
+        
         
         // Handle current user persistance
         if (PFUser.currentUser() != nil) {
@@ -56,6 +59,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Handle Logout Broadcast By Moving to The Login Screen
     func userDidLogout() {
         let vc = storyboard.instantiateInitialViewController()! as UIViewController
+        window?.rootViewController = vc
+    }
+    
+    
+    // Handle Return Home after Image Post
+    func userDidUploadImage() {
+        let vc = storyboard.instantiateViewControllerWithIdentifier("MainTabBarController") as! UITabBarController
         window?.rootViewController = vc
     }
 

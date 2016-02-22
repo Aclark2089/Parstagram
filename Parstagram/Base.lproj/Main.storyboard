@@ -174,7 +174,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Media" rowHeight="252" id="llY-BR-Qs1" customClass="MediaTableViewCell" customModule="Parstagram" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MediaTableViewCell" rowHeight="252" id="llY-BR-Qs1" customClass="MediaTableViewCell" customModule="Parstagram" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="252"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="llY-BR-Qs1" id="ddc-ak-Y64">
@@ -232,9 +232,47 @@
                     <view key="view" contentMode="scaleToFill" id="b4Z-qz-IDd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdT-2g-9fM">
+                                <rect key="frame" x="136" y="461" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="onSubmit:" destination="hp3-Em-uNq" eventType="touchUpInside" id="gpb-GK-HX9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVX-x4-bPi">
+                                <rect key="frame" x="20" y="399" width="94" height="30"/>
+                                <state key="normal" title="Upload Photo"/>
+                                <connections>
+                                    <action selector="onUpload:" destination="hp3-Em-uNq" eventType="touchUpInside" id="T0n-KB-29h"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hut-hb-q1X">
+                                <rect key="frame" x="20" y="335" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZNB-uH-MD9">
+                                <rect key="frame" x="20" y="28" width="280" height="299"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34y-Zp-Ukt">
+                                <rect key="frame" x="188" y="398" width="112" height="30"/>
+                                <state key="normal" title="Take New Photo"/>
+                                <connections>
+                                    <action selector="onTakePhoto:" destination="hp3-Em-uNq" eventType="touchUpInside" id="4df-af-pGv"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="mNT-T8-3vi"/>
+                    <connections>
+                        <outlet property="captionField" destination="hut-hb-q1X" id="Nux-DM-iuS"/>
+                        <outlet property="chosenImageView" destination="ZNB-uH-MD9" id="ivB-5Q-ZOh"/>
+                        <outlet property="submitButton" destination="VdT-2g-9fM" id="stk-Cv-ciS"/>
+                        <outlet property="takePhotoButton" destination="34y-Zp-Ukt" id="VxQ-vb-1e2"/>
+                        <outlet property="uploadPhotoButton" destination="mVX-x4-bPi" id="KuF-lz-pgQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dde-n1-bQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

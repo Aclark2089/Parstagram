@@ -30,6 +30,7 @@ class HomeViewController: UIViewController {
         // Setup tableview
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.reloadData()
         
         // Setup refresh controller for table reload
         refreshController = UIRefreshControl()
@@ -227,7 +228,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         // If the media content for this cell exists, set it
         if (media?[indexPath.section]["media"] != nil) {
-            let imageFile = media?[indexPath.section] as! PFFile
+            let imageFile = media?[indexPath.section]["media"] as! PFFile
             imageFile.getDataInBackgroundWithBlock({ (data: NSData?, error: NSError?) ->
             Void in
                 
