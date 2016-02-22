@@ -10,6 +10,10 @@ import UIKit
 
 class MediaTableViewCell: UITableViewCell {
 
+    // Outlets
+    @IBOutlet weak var mediaImageView: UIImageView!
+    @IBOutlet weak var captionLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

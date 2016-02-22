@@ -164,25 +164,52 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
         headerView.backgroundColor = UIColor(white: 1, alpha: 0.9)
         
-//        // Profile view to be added to header
-//        let profileView = UIImageView(frame: CGRect(x: 10, y: 2, width: 25, height: 25))
-//        profileView.clipsToBounds = true
-//        profileView.layer.cornerRadius = 15;
-//        profileView.layer.borderColor = UIColor(white: 0.7, alpha: 0.8).CGColor
-//        profileView.layer.borderWidth = 1;
-//        
-//        // Use the section number to get the right URL
-//        let cellMedia = media![section]
-//        profileView.setImageWithURL(NSURL(string: cellMedia["user"]!["profile_picture"] as! String)!)
-//        
-//        // Username to be added to header
-//        let usernamelabel = UILabel(frame: CGRect(x: 60, y: 2, width: 200, height: 25))
-//        usernamelabel.clipsToBounds = true
-//        usernamelabel.text = picture["user"]!["username"] as? String
-//        
-//        // Add views to header
-//        headerView.addSubview(profileView)
-//        headerView.addSubview(usernamelabel)
+        // Profile view to be added to header
+        let profileView = UIImageView(frame: CGRect(x: 10, y: 2, width: 25, height: 25))
+        profileView.clipsToBounds = true
+        profileView.layer.cornerRadius = 15;
+        profileView.layer.borderColor = UIColor(white: 0.7, alpha: 0.8).CGColor
+        profileView.layer.borderWidth = 1;
+        
+        // Use the section number to get the right URL
+        let cellMedia = media?[section]
+        
+        // Get profile image into header
+        if (cellMedia?["author"]["profile_image"] != nil) {
+            let authorImage = cellMedia!["author"]["profile_image"] as! PFFile
+            authorImage.getDataInBackgroundWithBlock({ (data: NSData?, error: NSError?) ->
+            Void in
+                // Failure to get author image
+                if let error = error {
+                    
+                    // Log Error
+                    NSLog("Unable to get author image for cell\nError: \(error)")
+                    
+                }
+                // Success getting author image
+                else {
+                    
+                    // Set image to the cell's author view after parsing as image
+                    let profileImage = UIImage(data: data!)
+                    profileView.image = profileImage
+                    
+                }
+            })
+        }
+
+        
+        // Username to be added to header
+        let usernamelabel = UILabel(frame: CGRect(x: 60, y: 2, width: 200, height: 25))
+        usernamelabel.clipsToBounds = true
+        
+        // If the username for the author exists, set it
+        if (cellMedia?["author"].username != nil) {
+            usernamelabel.text = cellMedia!["author"].username
+        }
+        
+        // Add views to header
+        headerView.addSubview(profileView)
+        headerView.addSubview(usernamelabel)
         
         // Return cell header
         return headerView
@@ -197,6 +224,33 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     // Working with each media cell
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("MediaTableViewCell", forIndexPath: indexPath) as! MediaTableViewCell
+        
+        // If the media content for this cell exists, set it
+        if (media?[indexPath.section]["media"] != nil) {
+            let imageFile = media?[indexPath.section] as! PFFile
+            imageFile.getDataInBackgroundWithBlock({ (data: NSData?, error: NSError?) ->
+            Void in
+                
+                // Failure to get image
+                if let error = error {
+                    // Log Failure
+                    NSLog("Unable to get image data for table cell \(indexPath.section)\nError: \(error)")
+                }
+                // Success getting image
+                else {
+                    // Get image and set to cell's content
+                    let image = UIImage(data: data!)
+                    cell.mediaImageView.image = image
+                }
+            })
+        }
+        
+        // If the caption for this cell exists, set it
+        if (media?[indexPath.section]["caption"] != nil) {
+            let caption = media![indexPath.section]["caption"] as! String
+            cell.captionLabel.text = caption
+        }
+        
         return cell
     }
 
