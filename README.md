@@ -2,33 +2,39 @@
 
 **Parstagram** is a photo sharing app using Parse as its backend.
 
-Time spent: **X** hours spent in total
+Time spent: **9** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [ ] User can sign up to create a new account using Parse authentication
-- [ ] User can log in and log out of his or her account
-- [ ] The current signed in user is persisted across app restarts
-- [ ] User can take a photo, add a caption, and post it to "Instagram"
-- [ ] User can view the last 20 posts submitted to "Instagram"
+- [x] User can sign up to create a new account using Parse authentication
+- [x] User can log in and log out of his or her account
+- [x] The current signed in user is persisted across app restarts
+- [x] User can take a photo, add a caption, and post it to "Instagram"
+- [x] User can view the last 20 posts submitted to "Instagram"
 
 The following **optional** features are implemented:
 
-- [ ] Show the username and creation time for each post
+- [x] Show the username and creation time for each post
 - [ ] When the user is uploading a photo, show a progress indicator to show how much of the photo has been uploaded
 - [ ] User can connect his or her Facebook account
 - [ ] User can comment on a post and see all comments for each post
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] Add sign in view for creating new users
+- [x] Added addition parameter for email of user on signup
+- [x] Error handling for user signup information being incorrect or missing
+- [x] Error handling for the camera submission of upload if caption
+- [x] Setup application in tab bar controller for easy navigation
+- [x] Added images for basic user profile, and tab bar items
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. Programmatically working with the tab bar, I had to ask for some help on how
+   to get the items to work correctly
+2. Setting the sections in cells
 
 ## Video Walkthrough
 
@@ -40,7 +46,10 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+This app was very enjoyable to build but I wish there had been some tutorials
+for working with the camera and photo library because that is what took me the
+most time for sure. I also had to consult the Parse docs quite a bit to get all
+the PFFile things for getting the image into the server.
 
 ## License
 

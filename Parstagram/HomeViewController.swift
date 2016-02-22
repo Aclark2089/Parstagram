@@ -174,32 +174,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         profileView.layer.borderColor = UIColor(white: 0.7, alpha: 0.8).CGColor
         profileView.layer.borderWidth = 1;
         
-        
-        
+        // Setup our basic profile
         profileView.image = UIImage(named: "assets-userprofileimage")
-        
-        // Get profile image into header
-//        if (media?[section]["author"]["profile_image"] != nil) {
-//            let authorImage = media![section]["author"]["profile_image"] as! PFFile
-//            authorImage.getDataInBackgroundWithBlock({ (data: NSData?, error: NSError?) ->
-//            Void in
-//                // Failure to get author image
-//                if let error = error {
-//                    
-//                    // Log Error
-//                    NSLog("Unable to get author image for cell\nError: \(error)")
-//                    
-//                }
-//                // Success getting author image
-//                else {
-//                    
-//                    // Set image to the cell's author view after parsing as image
-//                    let profileImage = UIImage(data: data!)
-//                    profileView.image = profileImage
-//                    
-//                }
-//            })
-//        }
 
         
         // Username to be added to header

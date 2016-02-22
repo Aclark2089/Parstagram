@@ -131,22 +131,6 @@ class ImageCaptureViewController: UIViewController, UIImagePickerControllerDeleg
             self.presentViewController(alert, animated: true) {}
         
         }
-        // No image chosen
-        else if (chosenImageView.image == nil) {
-            
-            // Log
-            NSLog("No image chosen for upload\n")
-            
-            // Shut down the progress wheel
-            SVProgressHUD.dismiss()
-            
-            // Alert the user to what happened
-            let alert = UIAlertController(title: "No Image Chosen", message: "Please pick an image!", preferredStyle: .Alert)
-            let dismissAction = UIAlertAction(title: "OK", style: .Default) { (action) in }
-            alert.addAction(dismissAction)
-            self.presentViewController(alert, animated: true) {}
-            
-        }
         // No image or caption chosen
         else {
             
