@@ -221,10 +221,10 @@
             </objects>
             <point key="canvasLocation" x="1795" y="394"/>
         </scene>
-        <!--View Controller-->
+        <!--Image Capture View Controller-->
         <scene sceneID="iQv-P0-ikG">
             <objects>
-                <viewController id="hp3-Em-uNq" sceneMemberID="viewController">
+                <viewController id="hp3-Em-uNq" customClass="ImageCaptureViewController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dnW-Ri-sPK"/>
                         <viewControllerLayoutGuide type="bottom" id="ZXx-1Z-ATy"/>
