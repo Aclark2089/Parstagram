@@ -282,7 +282,7 @@
         <scene sceneID="T63-IP-zen">
             <objects>
                 <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="mpi-ZT-FcC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="XPh-Hg-Wq1"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="assets-homeimage" id="XPh-Hg-Wq1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dOf-hG-qSn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -304,7 +304,7 @@
         <!--Main Tab Bar Controller-->
         <scene sceneID="3Dz-RD-Vp7">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="hsT-wg-uR4" customClass="MainTabBarController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="hsT-wg-uR4" customClass="MainTabBarController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="wb0-80-jAs">
                         <autoresizingMask key="autoresizingMask"/>
@@ -323,7 +323,7 @@
         <scene sceneID="DM5-yd-tbz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="XP1-MO-cSZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Capture" id="IBg-M3-bXO"/>
+                    <tabBarItem key="tabBarItem" title="Capture" image="assets-cameraimage" id="IBg-M3-bXO"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Sch-b3-aXY"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7bW-ax-2Fw">
@@ -344,6 +344,10 @@
             <point key="canvasLocation" x="843" y="1116"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="assets-cameraimage" width="32" height="32"/>
+        <image name="assets-homeimage" width="32" height="32"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="uKy-1D-P3d"/>
     </inferredMetricsTieBreakers>

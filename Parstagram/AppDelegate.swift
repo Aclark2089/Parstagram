@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSLog("Moving to Home View Controller\n")
             
             //Setup vc to move to home contoller
-            let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+            let vc = storyboard.instantiateViewControllerWithIdentifier("MainTabBarController") as! UITabBarController
             
             
             // Set window to vc

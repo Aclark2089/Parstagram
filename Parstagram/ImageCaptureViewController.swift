@@ -34,6 +34,18 @@ class ImageCaptureViewController: UIViewController, UIImagePickerControllerDeleg
         chosenImageView.hidden = true
         captionField.hidden = true
         submitButton.hidden = true
+        
+        // Setup test for the camera and photo library in case they are not usable, will avoid crash
+        
+        // Check photo library
+        if (UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) == false) {
+            uploadPhotoButton.enabled = false
+        }
+        
+        // Check the camera
+        if (UIImagePickerController.isSourceTypeAvailable(.Camera) == false) {
+            takePhotoButton.enabled = false
+        }
 
         // Do any additional set up after loading the view.
     }

@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Parstagram/HomeViewController.swift"
-            timestampString = "477807266.251509"
+            filePath = "Parstagram/AppDelegate.swift"
+            timestampString = "477808807.436213"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "userDidUploadImage()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

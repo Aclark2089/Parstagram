@@ -30,7 +30,9 @@ class HomeViewController: UIViewController {
         // Setup tableview
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.reloadData()
+        
+        // Call Server for intial population
+        callServerForUserMedia()
         
         // Setup refresh controller for table reload
         refreshController = UIRefreshControl()
@@ -50,7 +52,7 @@ class HomeViewController: UIViewController {
         let query = PFQuery(className: "UserMedia")
         
         // Order the media gathered by creation date, include author and set limit # of media returned
-        query.orderByAscending("createdAt")
+        query.orderByDescending("createdAt")
         query.includeKey("author")
         query.limit = 20
         
@@ -172,31 +174,32 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         profileView.layer.borderColor = UIColor(white: 0.7, alpha: 0.8).CGColor
         profileView.layer.borderWidth = 1;
         
-        // Use the section number to get the right URL
-        let cellMedia = media?[section]
+        
+        
+        profileView.image = UIImage(named: "assets-userprofileimage")
         
         // Get profile image into header
-        if (cellMedia?["author"]["profile_image"] != nil) {
-            let authorImage = cellMedia!["author"]["profile_image"] as! PFFile
-            authorImage.getDataInBackgroundWithBlock({ (data: NSData?, error: NSError?) ->
-            Void in
-                // Failure to get author image
-                if let error = error {
-                    
-                    // Log Error
-                    NSLog("Unable to get author image for cell\nError: \(error)")
-                    
-                }
-                // Success getting author image
-                else {
-                    
-                    // Set image to the cell's author view after parsing as image
-                    let profileImage = UIImage(data: data!)
-                    profileView.image = profileImage
-                    
-                }
-            })
-        }
+//        if (media?[section]["author"]["profile_image"] != nil) {
+//            let authorImage = media![section]["author"]["profile_image"] as! PFFile
+//            authorImage.getDataInBackgroundWithBlock({ (data: NSData?, error: NSError?) ->
+//            Void in
+//                // Failure to get author image
+//                if let error = error {
+//                    
+//                    // Log Error
+//                    NSLog("Unable to get author image for cell\nError: \(error)")
+//                    
+//                }
+//                // Success getting author image
+//                else {
+//                    
+//                    // Set image to the cell's author view after parsing as image
+//                    let profileImage = UIImage(data: data!)
+//                    profileView.image = profileImage
+//                    
+//                }
+//            })
+//        }
 
         
         // Username to be added to header
@@ -204,8 +207,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         usernamelabel.clipsToBounds = true
         
         // If the username for the author exists, set it
-        if (cellMedia?["author"].username != nil) {
-            usernamelabel.text = cellMedia!["author"].username
+        if (media?[section]["author"].username != nil) {
+            usernamelabel.text = media![section]["author"].username
         }
         
         // Add views to header
