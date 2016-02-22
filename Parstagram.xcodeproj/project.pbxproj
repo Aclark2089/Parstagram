@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AA73C47E082631134D8E632E /* Pods_Parstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EC23D793F1065BB2E366E4 /* Pods_Parstagram.framework */; };
 		FA48EF7B1C73EDA7006E6FBF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48EF7A1C73EDA7006E6FBF /* LoginViewController.swift */; };
+		FAB997EE1C7AB462003E5AE7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB997ED1C7AB462003E5AE7 /* MainTabBarController.swift */; };
+		FAB997F01C7AB5B0003E5AE7 /* ImageCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB997EF1C7AB5B0003E5AE7 /* ImageCaptureViewController.swift */; };
 		FAEFD5321C7A4FF100AD9206 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFD5311C7A4FF100AD9206 /* HomeViewController.swift */; };
 		FAEFD5341C7A574200AD9206 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFD5331C7A574200AD9206 /* SignUpViewController.swift */; };
 		FAEFD5381C7A686600AD9206 /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFD5371C7A686600AD9206 /* MediaTableViewCell.swift */; };
@@ -25,6 +27,8 @@
 		3C3629B447D01EB345F0D5F2 /* Pods-Parstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parstagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parstagram/Pods-Parstagram.release.xcconfig"; sourceTree = "<group>"; };
 		AB96F455F5E3835BA2C18F2F /* Pods-Parstagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parstagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Parstagram/Pods-Parstagram.debug.xcconfig"; sourceTree = "<group>"; };
 		FA48EF7A1C73EDA7006E6FBF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FAB997ED1C7AB462003E5AE7 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		FAB997EF1C7AB5B0003E5AE7 /* ImageCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCaptureViewController.swift; sourceTree = "<group>"; };
 		FAEFD5311C7A4FF100AD9206 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FAEFD5331C7A574200AD9206 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FAEFD5371C7A686600AD9206 /* MediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 				FA48EF7A1C73EDA7006E6FBF /* LoginViewController.swift */,
 				FAEFD5311C7A4FF100AD9206 /* HomeViewController.swift */,
 				FAEFD5331C7A574200AD9206 /* SignUpViewController.swift */,
+				FAB997ED1C7AB462003E5AE7 /* MainTabBarController.swift */,
+				FAB997EF1C7AB5B0003E5AE7 /* ImageCaptureViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -249,8 +255,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB997F01C7AB5B0003E5AE7 /* ImageCaptureViewController.swift in Sources */,
 				FAEFD5341C7A574200AD9206 /* SignUpViewController.swift in Sources */,
 				FAEFD5321C7A4FF100AD9206 /* HomeViewController.swift in Sources */,
+				FAB997EE1C7AB462003E5AE7 /* MainTabBarController.swift in Sources */,
 				FA48EF7B1C73EDA7006E6FBF /* LoginViewController.swift in Sources */,
 				FAF548F31C73E85C0085456E /* AppDelegate.swift in Sources */,
 				FAEFD5381C7A686600AD9206 /* MediaTableViewCell.swift in Sources */,
